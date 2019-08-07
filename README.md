@@ -6,6 +6,11 @@ Fully configurable wolf management plugin. Change your wolfs name or level up yo
 - Any Economy Plugin (E.g. EssentialsX, EasyShops, AuctionHouse, RealEstate)
 - Minecraft Server Running on 1.12.2
 
+### Commands
+```yml
+/attackdog summon
+```
+
 ### Permissions
 ```yml
 attackdog.summon
