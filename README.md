@@ -1,5 +1,5 @@
 # AttackDog
-Fully configurable wolf management plugin. Change your wolfs name or level up your wolfs health, damage and speed.
+Fully configurable wolf management plugin. Change your wolfs name or level up your wolfs health, damage and speed for a price.
 
 ### Requirements
 - [Vault](https://www.spigotmc.org/resources/vault.34315/)
