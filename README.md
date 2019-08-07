@@ -220,9 +220,3 @@ wolfs:
       name: valkyrienyanko
 ```
 </details>
-
-### Upcoming Features
-- Toggle wolf silent
-- Toggle wolf age
-- GUI size configurable
-- Make toggle sneak option configurable
