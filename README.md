@@ -1,6 +1,17 @@
 # AttackDog
-Plugin request from UnLogic_#0995.
+Fully configurable wolf management plugin. Change your wolfs name or level up your wolfs health, damage and speed.
 
+### Requirements
+- [Vault](https://www.spigotmc.org/resources/vault.34315/).
+- Any Economy Plugin (E.g. EssentialsX, EasyShops, AuctionHouse, RealEstate).
+- Minecraft Client + Server on 1.12.2
+
+### Permissions
+```yml
+attackdog.summon
+```
+
+### Configs
 #### config.yml
 ```yml
 wolf:
