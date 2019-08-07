@@ -1,7 +1,7 @@
 # AttackDog
 Plugin request from UnLogic_#0995.
 
-### config.yml
+#### config.yml
 ```yml
 wolf:
   teleport_on_join: true
@@ -66,7 +66,7 @@ wolf:
     # The max number of speed upgrades.
 ```
 
-### gui.yml
+#### gui.yml
 ```yml
 # Materials https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
 # Color Codes https://www.planetminecraft.com/blog/bukkit-color-codes/
@@ -108,7 +108,7 @@ gui:
       slot: 3
 ```
 
-### messages.yml
+#### messages.yml
 ```yml
 messages:
   error:
@@ -164,7 +164,7 @@ messages:
       # %playerbalance% -> The players balance after they purchased the upgrade.
 ```
 
-### wolfs.yml
+#### wolfs.yml
 ```yml
 wolfs:
   # Example wolf preset, do not remove or config may become corrupt if list empty.
