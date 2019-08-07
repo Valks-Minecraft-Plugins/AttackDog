@@ -23,9 +23,6 @@ attackdog.color
   <summary>Click to Expand</summary>
 
 #### config.yml
-<details>
-  <summary>Click to Expand</summary>
-  
   ```yml
   wolf:
     teleport_on_join: true
@@ -89,7 +86,6 @@ attackdog.color
       max_level: 5
       # The max number of speed upgrades.
   ```
-</details>
 
 #### gui.yml
 ```yml
