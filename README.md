@@ -23,69 +23,73 @@ attackdog.color
   <summary>Click to Expand</summary>
 
 #### config.yml
-```yml
-wolf:
-  teleport_on_join: true
-  # Should the wolf teleport when its owner joins the server?
+<details>
+  <summary>Click to Expand</summary>
   
-  tamed_on_spawn: true
-  # Should the wolf be tamed on first summon?
-  
-  max_name_length: 20
-  # The max length of your wolfs name.
-  
-  one_word_name: true
-  # Should the wolfs name be limited to only one word?
-  
-  summon:
-    cooldown: 60
-    # The cooldown for how long before you can attempt to summon another wolf if necessary.
-  health:
-    cost: 100
-    # The base cost of the wolfs health upgrade.
-    
-    cost_lvl_multiplier: 1.2
-    # The cost level multiplier for the wolfs health upgrade.
-    
-    health_lvl_multiplier: 1.2
-    # Determines how much health is applied every upgrade.
-    
-    initial_amount: 10
-    # The initial amount of health the wolf should be summoned with.
-    
-    max_level: 5
-    # The max number of health upgrades.
-  damage:
-    cost: 250
-    # The base cost of the wolfs damage upgrade.
-    
-    cost_lvl_multiplier: 1.2
-    # The cost level multiplier for the wolfs damage upgrade.
-    
-    health_lvl_multiplier: 1.2
-    # Determines how much damage is applied every upgrade.
-    
-    initial_amount: 2.0
-    # The initial amount of damage the wolf should be summoned with.
-    
-    max_level: 5
-    # The max number of damage upgrades.
-  speed:
-    cost: 125
-    # The base cost of the wolfs speed upgrade.
-    
-    cost_lvl_multiplier: 1.2
-    # The cost level multiplier for the wolfs speed upgrade.
-    
-    health_lvl_multiplier: 1.2
-    # Determines how much speed is applied every upgrade.
-    
-    initial_amount: 0.2
-    # The initial amount of speed the wolf should be summoned with.
-    
-    max_level: 5
-    # The max number of speed upgrades.
-```
+  ```yml
+  wolf:
+    teleport_on_join: true
+    # Should the wolf teleport when its owner joins the server?
+
+    tamed_on_spawn: true
+    # Should the wolf be tamed on first summon?
+
+    max_name_length: 20
+    # The max length of your wolfs name.
+
+    one_word_name: true
+    # Should the wolfs name be limited to only one word?
+
+    summon:
+      cooldown: 60
+      # The cooldown for how long before you can attempt to summon another wolf if necessary.
+    health:
+      cost: 100
+      # The base cost of the wolfs health upgrade.
+
+      cost_lvl_multiplier: 1.2
+      # The cost level multiplier for the wolfs health upgrade.
+
+      health_lvl_multiplier: 1.2
+      # Determines how much health is applied every upgrade.
+
+      initial_amount: 10
+      # The initial amount of health the wolf should be summoned with.
+
+      max_level: 5
+      # The max number of health upgrades.
+    damage:
+      cost: 250
+      # The base cost of the wolfs damage upgrade.
+
+      cost_lvl_multiplier: 1.2
+      # The cost level multiplier for the wolfs damage upgrade.
+
+      health_lvl_multiplier: 1.2
+      # Determines how much damage is applied every upgrade.
+
+      initial_amount: 2.0
+      # The initial amount of damage the wolf should be summoned with.
+
+      max_level: 5
+      # The max number of damage upgrades.
+    speed:
+      cost: 125
+      # The base cost of the wolfs speed upgrade.
+
+      cost_lvl_multiplier: 1.2
+      # The cost level multiplier for the wolfs speed upgrade.
+
+      health_lvl_multiplier: 1.2
+      # Determines how much speed is applied every upgrade.
+
+      initial_amount: 0.2
+      # The initial amount of speed the wolf should be summoned with.
+
+      max_level: 5
+      # The max number of speed upgrades.
+  ```
+</details>
 
 #### gui.yml
 ```yml
