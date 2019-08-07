@@ -1,0 +1,10 @@
+name: AttackDog
+main: me.valk.attackdog.AttackDog
+author: valkyrienyanko
+version: 1.0
+api-version: 1.12
+soft-depend: [Vault]
+commands:
+   attackdog:
+     description: Opens up the attack dog help.
+     aliases: [attackd, ad]
