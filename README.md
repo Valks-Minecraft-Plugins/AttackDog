@@ -11,7 +11,7 @@ Fully configurable wolf management plugin. Change your wolfs name or level up yo
 attackdog.summon
 ```
 
-### Configs
+### Configuration
 <details>
   <summary>Click to Expand</summary>
 
