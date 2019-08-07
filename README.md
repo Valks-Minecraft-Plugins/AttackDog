@@ -14,8 +14,8 @@ attackdog.summon
 ### Configs
 <details>
   <summary>Click to Expand</summary>
-#### config.yml
 
+#### config.yml
 ```yml
 wolf:
   teleport_on_join: true
