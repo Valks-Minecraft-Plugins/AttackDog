@@ -85,6 +85,21 @@ attackdog.color
 
       max_level: 5
       # The max number of speed upgrades.
+    armor:
+      cost: 125
+      # The base cost of the wolfs armor upgrade.
+      
+      cost_lvl_multiplier: 1.2
+      # The cost level multiplier for the wolfs armor upgrade.
+      
+      armor_lvl_multiplier: 1.2
+      # Determines how much armor is applied every upgrade.
+      
+      initial_amount: 3
+      # The initial amount of armor the wolf should be summoned with.
+      
+      max_level: 5
+      # The max number of armor upgrades.
   ```
 
 #### gui.yml
@@ -94,6 +109,7 @@ attackdog.color
 # Item Flags https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/inventory/ItemFlag.html
 # Enchantments https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/enchantments/Enchantment.html
 gui:
+  rows: 1
   buttons:
     update_name:
       material: NAME_TAG
