@@ -2,9 +2,9 @@
 Fully configurable wolf management plugin. Change your wolfs name or level up your wolfs health, damage and speed.
 
 ### Requirements
-- [Vault](https://www.spigotmc.org/resources/vault.34315/).
-- Any Economy Plugin (E.g. EssentialsX, EasyShops, AuctionHouse, RealEstate).
-- Minecraft Client + Server on 1.12.2
+- [Vault](https://www.spigotmc.org/resources/vault.34315/)
+- Any Economy Plugin (E.g. EssentialsX, EasyShops, AuctionHouse, RealEstate)
+- Minecraft Server Running on 1.12.2
 
 ### Permissions
 ```yml
@@ -12,6 +12,9 @@ attackdog.summon
 ```
 
 ### Configs
+<details>
+  <summary>Summary</summary>
+</details>
 #### config.yml
 ```yml
 wolf:
