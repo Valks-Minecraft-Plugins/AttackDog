@@ -8,10 +8,7 @@ Fully configurable wolf management plugin. Change your wolfs name or level up yo
 
 ### Commands
 ```yml
-/attackdog summon
-/attackdog reload
-/attackdog author
-/attackdog version
+/attackdog [summon, reload, author, version]
 ```
 
 ### Permissions
