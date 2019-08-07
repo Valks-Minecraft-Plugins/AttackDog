@@ -53,7 +53,7 @@ wolf:
     initial_amount: 10
     # The initial amount of health the wolf should be summoned with.
     
-    max_level: 10
+    max_level: 5
     # The max number of health upgrades.
   damage:
     cost: 250
@@ -68,7 +68,7 @@ wolf:
     initial_amount: 2.0
     # The initial amount of damage the wolf should be summoned with.
     
-    max_level: 10
+    max_level: 5
     # The max number of damage upgrades.
   speed:
     cost: 125
@@ -83,7 +83,7 @@ wolf:
     initial_amount: 0.2
     # The initial amount of speed the wolf should be summoned with.
     
-    max_level: 10
+    max_level: 5
     # The max number of speed upgrades.
 ```
 
