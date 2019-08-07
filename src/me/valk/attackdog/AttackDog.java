@@ -119,6 +119,12 @@ public class AttackDog extends JavaPlugin {
 		defaultSet(mainConfig, "wolf.speed.speed_lvl_multiplier", 1.2);
 		defaultSet(mainConfig, "wolf.speed.initial_amount", 0.2);
 		defaultSet(mainConfig, "wolf.speed.max_level", 5);
+		
+		defaultSet(mainConfig, "wolf.armor.cost", 125);
+		defaultSet(mainConfig, "wolf.armor.cost_lvl_multiplier", 1.2);
+		defaultSet(mainConfig, "wolf.armor.armor_lvl_multiplier", 1.2);
+		defaultSet(mainConfig, "wolf.armor.initial_amount", 3);
+		defaultSet(mainConfig, "wolf.armor.max_level", 5);
 		mainCM.saveConfig();
 	}
 	
@@ -137,6 +143,7 @@ public class AttackDog extends JavaPlugin {
 		defaultSet(messagesConfig, "messages.message.update_health.output", "&7Upgraded your wolfs health to level &f%newhealthlevel% &7for &f$%cost%&7. Your balance is now at &f$%playerbalance%&7. (&f%oldhealth% &7-> &f%newhealth%&7)");
 		defaultSet(messagesConfig, "messages.message.update_damage.output", "&7Upgraded your wolfs damage to level &f%newdamagelevel% &7for &f$%cost%&7. Your balance is now at &f$%playerbalance%&7. (&f%olddamage% &7-> &f%newdamage%&7)");
 		defaultSet(messagesConfig, "messages.message.update_speed.output", "&7Upgraded your wolfs speed to level &f%newspeedlevel% &7for &f$%cost%&7. Your balance is now at &f$%playerbalance%&7. (&f%oldspeed% &7-> &f%newspeed%&7)");
+		defaultSet(messagesConfig, "messages.message.update_armor.output", "&7Upgraded your wolfs armor to level &f%newarmorlevel% &7for &f$%cost%&7. Your balance is now at &f$%playerbalance%&7. (&f%oldarmor% &7-> &f%newarmor%&7)");
 		
 		messagesCM.saveConfig();
 	}
@@ -148,10 +155,12 @@ public class AttackDog extends JavaPlugin {
 			wolfsConfig.set("wolfs.1.level.health", 0);
 			wolfsConfig.set("wolfs.1.level.damage", 0);
 			wolfsConfig.set("wolfs.1.level.speed", 0);
+			wolfsConfig.set("wolfs.1.level.armor", 0);
 			wolfsConfig.set("wolfs.1.stats.tamed", true);
 			wolfsConfig.set("wolfs.1.stats.curHealth", 0);
 			wolfsConfig.set("wolfs.1.stats.curDamage", 0);
 			wolfsConfig.set("wolfs.1.stats.curSpeed", 0);
+			wolfsConfig.set("wolfs.1.stats.curArmor", 0);
 			wolfsConfig.set("wolfs.1.owner.uuid", "Preset");
 			wolfsConfig.set("wolfs.1.owner.name", "valkyrienyanko");
 		}
@@ -160,6 +169,8 @@ public class AttackDog extends JavaPlugin {
 	
 	private void initGUIConfig() {
 		ConfigItem configItem = new ConfigItem(guiCM);
+		defaultSet(guiConfig, "gui.rows", 1);
+		
 		if (!guiConfig.isSet("gui.buttons.update_name")) {
 			ItemStack item = ItemModule.item("&fName", "&7Change Name", Material.NAME_TAG);
 			ItemMeta im = item.getItemMeta();
@@ -186,6 +197,15 @@ public class AttackDog extends JavaPlugin {
 		if (!guiConfig.isSet("gui.buttons.update_speed")) {
 			configItem.set("gui.buttons.update_speed", ItemModule.item("&fSpeed", "&7Upgrade Speed\n&7Cost: &f$%amount%\n&7Level: &f%level%", Material.FEATHER));
 			guiConfig.set("gui.buttons.update_speed.slot", 3);
+		}
+		
+		if (!guiConfig.isSet("gui.buttons.update_armor")) {
+			ItemStack item = ItemModule.item("&fArmor", "&7Upgrade Armor\n&7Cost: &f$%amount%\n&7Level: &f%level%", Material.IRON_CHESTPLATE);
+			ItemMeta im = item.getItemMeta();
+			im.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+			item.setItemMeta(im);
+			configItem.set("gui.buttons.update_armor", item);
+			guiConfig.set("gui.buttons.update_armor.slot", 4);
 		}
 		guiCM.saveConfig();
 	}

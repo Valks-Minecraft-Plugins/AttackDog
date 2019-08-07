@@ -37,12 +37,15 @@ public class Utils {
 		
 		AttributeInstance attributeSpeed = wolf.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED);
 		AttributeInstance attributeAttack = wolf.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE);
+		AttributeInstance attributeArmor = wolf.getAttribute(Attribute.GENERIC_ARMOR);
 		
 		double initialSpeed = mainConfig.getDouble("wolf.speed.initial_amount");
 		double initialDamage = mainConfig.getDouble("wolf.damage.initial_amount");
+		double initialArmor = mainConfig.getDouble("wolf.armor.initial_amount");
 		
 		attributeSpeed.setBaseValue(initialSpeed);
 		attributeAttack.setBaseValue(initialDamage);
+		attributeArmor.setBaseValue(initialArmor);
 
 		int slot = 1;
 		if (wolfsConfig.isConfigurationSection("wolfs")) {

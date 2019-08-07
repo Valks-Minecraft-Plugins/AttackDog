@@ -21,24 +21,28 @@ public class GUI {
 		YamlConfiguration mainConfig = AttackDog.mainConfig;
 		YamlConfiguration wolfsConfig = AttackDog.wolfsConfig;
 		
-		Inventory inv = Bukkit.createInventory(null, 9, "Wolf");
+		Inventory inv = Bukkit.createInventory(null, guiConfig.getInt("gui.rows") * 9, "Wolf");
 		
 		ItemStack updateName = configItem.get("gui.buttons.update_name");
 		ItemStack updateHealth = configItem.get("gui.buttons.update_health");
 		ItemStack updateDamage = configItem.get("gui.buttons.update_damage");
 		ItemStack updateSpeed = configItem.get("gui.buttons.update_speed");
+		ItemStack updateArmor = configItem.get("gui.buttons.update_armor");
 		
 		double costHealthMultiplier = mainConfig.getDouble("wolf.health.cost_lvl_multiplier");
 		double costDamageMultiplier = mainConfig.getDouble("wolf.damage.cost_lvl_multiplier");
 		double costSpeedMultiplier = mainConfig.getDouble("wolf.speed.cost_lvl_multiplier");
+		double costArmorMultiplier = mainConfig.getDouble("wolf.armor.cost_lvl_multiplier");
 		
 		double costBaseHealth = mainConfig.getDouble("wolf.health.cost");
 		double costBaseDamage = mainConfig.getDouble("wolf.damage.cost");
 		double costBaseSpeed = mainConfig.getDouble("wolf.speed.cost");
+		double costBaseArmor = mainConfig.getDouble("wolf.armor.cost");
 		
 		int wolfHealthLvl = 0;
 		int wolfDamageLvl = 0;
 		int wolfSpeedLvl = 0;
+		int wolfArmorLvl = 0;
 		
 		ConfigurationSection configSection = wolfsConfig.getConfigurationSection("wolfs");
 		for (String element : configSection.getKeys(false)) {
@@ -46,21 +50,25 @@ public class GUI {
 				wolfHealthLvl = wolfsConfig.getInt("wolfs." + element + ".level.health");
 				wolfDamageLvl = wolfsConfig.getInt("wolfs." + element + ".level.damage");
 				wolfSpeedLvl = wolfsConfig.getInt("wolfs." + element + ".level.speed");
+				wolfArmorLvl = wolfsConfig.getInt("wolfs." + element + ".level.armor");
 			}
 		}
 		
 		double costHealth = costBaseHealth * (wolfHealthLvl + 1) * costHealthMultiplier * costHealthMultiplier;
 		double costDamage = costBaseDamage * (wolfDamageLvl + 1) * costDamageMultiplier * costDamageMultiplier;
 		double costSpeed = costBaseSpeed * (wolfSpeedLvl + 1) * costSpeedMultiplier * costSpeedMultiplier;
+		double costArmor = costBaseArmor * (wolfArmorLvl + 1) * costArmorMultiplier * costArmorMultiplier;
 
 		replacePlaceholderAmount(updateHealth, String.valueOf(costHealth), String.valueOf(wolfHealthLvl));
 		replacePlaceholderAmount(updateDamage, String.valueOf(costDamage), String.valueOf(wolfDamageLvl));
 		replacePlaceholderAmount(updateSpeed, String.valueOf(costSpeed), String.valueOf(wolfSpeedLvl));
+		replacePlaceholderAmount(updateArmor, String.valueOf(costArmor), String.valueOf(wolfArmorLvl));
 		
 		inv.setItem(guiConfig.getInt("gui.buttons.update_name.slot"), updateName);
 		inv.setItem(guiConfig.getInt("gui.buttons.update_health.slot"), updateHealth);
 		inv.setItem(guiConfig.getInt("gui.buttons.update_damage.slot"), updateDamage);
 		inv.setItem(guiConfig.getInt("gui.buttons.update_speed.slot"), updateSpeed);
+		inv.setItem(guiConfig.getInt("gui.buttons.update_armor.slot"), updateArmor);
 		return inv;
 	}
 	

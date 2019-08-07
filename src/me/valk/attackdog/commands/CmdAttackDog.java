@@ -35,7 +35,7 @@ public class CmdAttackDog implements CommandExecutor {
 			}
 			
 			if (args[0].equalsIgnoreCase("version")) {
-				sender.sendMessage(TextModule.color("&f1&7.&f0&7.&f2&7-SNAPSHOT"));
+				sender.sendMessage(TextModule.color("&71.0.4-SNAPSHOT"));
 				return true;
 			}
 			
