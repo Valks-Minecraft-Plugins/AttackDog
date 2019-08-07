@@ -15,7 +15,6 @@ public class ItemModule {
 		ItemStack item = new ItemStack(material);
 		ItemMeta im = item.getItemMeta();
 		im.setDisplayName(ChatColor.WHITE + TextModule.color(name));
-		im.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 		List<String> list = new ArrayList<String>();
 		for (String element : lore.split("\n")) {
 			list.add(TextModule.color(element));

@@ -20,6 +20,25 @@ public class CmdAttackDog implements CommandExecutor {
 				return true;
 			}
 			
+			if (args[0].equalsIgnoreCase("reload") && sender.hasPermission("attackdog.reload")) {
+				sender.sendMessage(TextModule.color("&7Reloaded all configs."));
+				AttackDog.guiCM.saveConfig();
+				AttackDog.mainCM.saveConfig();
+				AttackDog.messagesCM.saveConfig();
+				AttackDog.wolfsCM.saveConfig();
+				return true;
+			}
+			
+			if (args[0].equalsIgnoreCase("author")) {
+				sender.sendMessage(TextModule.color("&7Plugin created by &fvalkyrienyanko."));
+				return true;
+			}
+			
+			if (args[0].equalsIgnoreCase("version")) {
+				sender.sendMessage(TextModule.color("&f1&7.&f0&7.&f2&7-SNAPSHOT"));
+				return true;
+			}
+			
 			if (args[0].equalsIgnoreCase("summon")) {
 				if (!sender.hasPermission("attackdog.summon")) {
 					sender.sendMessage(TextModule.color(AttackDog.messagesConfig.getString("messages.error.no_perms")));
@@ -47,12 +66,6 @@ public class CmdAttackDog implements CommandExecutor {
 					
 					Utils.registerWolf(p);
 				}
-			}
-			
-			if (args[0].equalsIgnoreCase("test")) {
-				//Player p = (Player) sender;
-				//CustomWolf wolf = AttackDog.wolfs.get(p.getUniqueId());
-				//System.out.println("Speed via CMD: " + wolf.getAttributeInstance(Attributes.MOVEMENT_SPEED.asIAttribute()).getValue());
 			}
 		}
 		return true;

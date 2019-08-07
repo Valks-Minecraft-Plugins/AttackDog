@@ -4,6 +4,10 @@ import java.io.File;
 
 import org.bukkit.Material;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemFlag;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -102,19 +106,19 @@ public class AttackDog extends JavaPlugin {
 		defaultSet(mainConfig, "wolf.health.cost_lvl_multiplier", 1.2);
 		defaultSet(mainConfig, "wolf.health.health_lvl_multiplier", 1.2);
 		defaultSet(mainConfig, "wolf.health.initial_amount", 10);
-		defaultSet(mainConfig, "wolf.health.max_level", 10);
+		defaultSet(mainConfig, "wolf.health.max_level", 5);
 		
 		defaultSet(mainConfig, "wolf.damage.cost", 250);
 		defaultSet(mainConfig, "wolf.damage.cost_lvl_multiplier", 1.2);
 		defaultSet(mainConfig, "wolf.damage.damage_lvl_multiplier", 1.2);
 		defaultSet(mainConfig, "wolf.damage.initial_amount", 2.0);
-		defaultSet(mainConfig, "wolf.damage.max_level", 10);
+		defaultSet(mainConfig, "wolf.damage.max_level", 5);
 		
 		defaultSet(mainConfig, "wolf.speed.cost", 125);
 		defaultSet(mainConfig, "wolf.speed.cost_lvl_multiplier", 1.2);
 		defaultSet(mainConfig, "wolf.speed.speed_lvl_multiplier", 1.2);
 		defaultSet(mainConfig, "wolf.speed.initial_amount", 0.2);
-		defaultSet(mainConfig, "wolf.speed.max_level", 10);
+		defaultSet(mainConfig, "wolf.speed.max_level", 5);
 		mainCM.saveConfig();
 	}
 	
@@ -157,7 +161,11 @@ public class AttackDog extends JavaPlugin {
 	private void initGUIConfig() {
 		ConfigItem configItem = new ConfigItem(guiCM);
 		if (!guiConfig.isSet("gui.buttons.update_name")) {
-			configItem.set("gui.buttons.update_name", ItemModule.item("&fName", "&7Change Name", Material.NAME_TAG));
+			ItemStack item = ItemModule.item("&fName", "&7Change Name", Material.NAME_TAG);
+			ItemMeta im = item.getItemMeta();
+			im.addEnchant(Enchantment.MENDING, 1, false);
+			item.setItemMeta(im);
+			configItem.set("gui.buttons.update_name", item);
 			guiConfig.set("gui.buttons.update_name.slot", 0);
 		}
 		
@@ -167,7 +175,11 @@ public class AttackDog extends JavaPlugin {
 		}
 		
 		if (!guiConfig.isSet("gui.buttons.update_damage")) {
-			configItem.set("gui.buttons.update_damage", ItemModule.item("&fDamage", "&7Upgrade Damage\n&7Cost: &f$%amount%\n&7Level: &f%level%", Material.WOOD_SWORD));
+			ItemStack item = ItemModule.item("&fDamage", "&7Upgrade Damage\n&7Cost: &f$%amount%\n&7Level: &f%level%", Material.WOOD_SWORD);
+			ItemMeta im = item.getItemMeta();
+			im.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+			item.setItemMeta(im);
+			configItem.set("gui.buttons.update_damage", item);
 			guiConfig.set("gui.buttons.update_damage.slot", 2);
 		}
 		

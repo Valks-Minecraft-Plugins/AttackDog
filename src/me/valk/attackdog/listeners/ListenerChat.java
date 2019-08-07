@@ -61,7 +61,11 @@ public class ListenerChat implements Listener {
 						return;
 					}
 					
-					wolf.setCustomName(TextModule.color(newName));
+					if (p.hasPermission("attackdog.color")) {
+						wolf.setCustomName(TextModule.color(newName));
+					} else {
+						wolf.setCustomName(newName);
+					}
 					
 					String output = messagesConfig.getString("messages.message.update_name.output");
 					

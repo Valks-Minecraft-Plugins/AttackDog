@@ -42,6 +42,17 @@ public class ListenerEntityInteract implements Listener {
 		}
 		
 		/*
+		 * Cancel if player wants to dye their wolf a new color.
+		 * The materials are not all obvious to find in 1.12.2?
+		 */
+		switch (type) {
+		case INK_SACK:
+			return;
+		default:
+			break;
+		}
+		
+		/*
 		 * Cancel if the player is crouching in case the player wants to make their wolf sit.
 		 */
 		if (e.getPlayer().isSneaking()) {
