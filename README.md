@@ -13,9 +13,8 @@ attackdog.summon
 
 ### Configs
 <details>
-  <summary>Summary</summary>
-</details>
-#### config.yml
+  <summary>Click to Expand</summary>
+  #### config.yml
 ```yml
 wolf:
   teleport_on_join: true
@@ -212,3 +211,4 @@ wolfs:
       uuid: 35ea50ff-3927-4fcf-b65e-01932c67b864
       name: valkyrienyanko
 ```
+</details>
