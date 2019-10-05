@@ -54,12 +54,12 @@ public class CmdAttackDog implements CommandExecutor {
 					YamlConfiguration wolfsConfig = AttackDog.wolfsConfig;
 					ConfigurationSection configSection = wolfsConfig.getConfigurationSection("wolfs");
 					
-					for (String element : configSection.getKeys(false)) {
+					/*for (String element : configSection.getKeys(false)) {
 						if (wolfsConfig.getString("wolfs." + element + ".owner.uuid").equals(p.getUniqueId().toString())) {
 							p.sendMessage("You may only have one wolf at a time.");
 							return true;
 						}
-					}
+					}*/
 					
 					new Cooldown(p.getUniqueId(), AttackDog.mainConfig.getInt("wolf.summon.cooldown")).start();
 					sender.sendMessage(TextModule.color(AttackDog.messagesConfig.getString("messages.message.summoned")));

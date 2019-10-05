@@ -270,8 +270,6 @@ public class ListenerGUI implements Listener {
 
 						double oldArmor = attributeArmor.getValue();
 						double newArmor = oldArmor * multiplier;
-						
-						System.out.println(attributeArmor.getBaseValue());
 
 						attributeArmor.setBaseValue(newArmor);
 
