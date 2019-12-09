@@ -1,6 +1,8 @@
 # AttackDog
 Fully configurable wolf management plugin. Change your wolfs name or level up your wolfs health, damage and speed for a price.
 
+## About
+
 ### Requirements
 - [Vault](https://www.spigotmc.org/resources/vault.34315/)
 - Any Economy Plugin (E.g. EssentialsX, EasyShops, AuctionHouse, RealEstate)
